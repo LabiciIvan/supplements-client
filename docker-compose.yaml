@@ -1,5 +1,6 @@
 services:
   supplements-client:
+    container_name: frontend-cnt
     build: .
     ports:
       - "5500:5500"
