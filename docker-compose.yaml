@@ -1,0 +1,16 @@
+services:
+  supplements-client:
+    build: .
+    ports:
+      - "5500:5500"
+    volumes:
+      - .:/supplements-client
+      - /supplements-client/node_modules
+    environment:
+      VITE_API_URL: ${VITE_API_URL}
+      VITE_APP_NAME: ${VITE_APP_NAME}
+      VITE_APP_ENV: ${VITE_APP_ENV}
+      VITE_JWT_SECRET: ${VITE_JWT_SECRET}
+      VITE_DEV_BACKEND_API_URL: ${VITE_DEV_BACKEND_API_URL}
+      VITE_PROD_BACKEND_API_URL: ${VITE_PROD_BACKEND_API_URL}
+    command: npm run dev -- --host --port 5500
